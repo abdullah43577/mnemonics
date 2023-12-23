@@ -17,22 +17,22 @@ export default function Generator() {
   };
 
   return (
-    <section className="flex items-start gap-32 my-16">
-      <div>
+    <section className="flex flex-col-reverse lg:flex-row items-start gap-32 my-16">
+      <div className="w-full xl:w-auto">
         <div>
           <p className="text-[#8E8E93] text-[20px]">What's your key-letters?</p>
-          <input type="text" className="w-[440px] p-3 rounded-md outline-none border border-[#8338EC] text-center mt-3" value={input} onChange={(e) => setInput(e.target.value)} />
+          <input type="text" className="w-full xl:w-[440px] p-3 rounded-md outline-none border border-[#8338EC] text-center mt-3" value={input} onChange={(e) => setInput(e.target.value)} />
         </div>
 
         <div>
           <p className="text-[#8E8E93] text-[20px] py-4">How do you want it to sound?</p>
 
-          <div className="flex items-center gap-4 justify-center">
-            <div className="border border-gray-200 rounded-lg p-4 cursor-pointer">Educative</div>
+          <div className="flex items-center gap-2 xl:gap-4 justify-center">
+            <div className="border border-gray-200 rounded-lg p-2 xl:p-4 cursor-pointer">Educative</div>
 
-            <div className="border border-gray-200 rounded-lg p-4 cursor-pointer">Educative</div>
+            <div className="border border-gray-200 rounded-lg p-2 xl:p-4 cursor-pointer">Educative</div>
 
-            <div className="border border-gray-200 rounded-lg p-4 cursor-pointer">Educative</div>
+            <div className="border border-gray-200 rounded-lg p-2 xl:p-4 cursor-pointer">Educative</div>
           </div>
         </div>
 
@@ -59,11 +59,11 @@ export default function Generator() {
         </button>
       </div>
 
-      <div className="bg-gray-200 w-[2px] h-[400px]"></div>
+      <div className="bg-gray-200 w-[2px] h-[400px] hidden xl:block"></div>
 
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 w-full xl:w-auto">
         {selectedMnemo?.map((_, i) => (
-          <div key={i} className={`generated_mnemo generated_mnemo-${i} border border-gray-200 rounded-lg w-[440px] cursor-pointer py-4 relative overflow-hidden `} onClick={() => handleGeneratedMnemoClick(`generated_mnemo-${i}`)}>
+          <div key={i} className={`generated_mnemo generated_mnemo-${i} border border-gray-200 rounded-lg w-full xl:w-[440px] cursor-pointer py-4 relative overflow-hidden `} onClick={() => handleGeneratedMnemoClick(`generated_mnemo-${i}`)}>
             <div className="heart_container rounded-full bg-white absolute -top-2 -left-2 w-[40px] h-[40px]">
               <svg className="absolute bottom-2 right-[6px]" width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path

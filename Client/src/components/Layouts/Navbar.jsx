@@ -4,9 +4,9 @@ export default function Navbar() {
   return (
     <nav className="border border-gray-200 mb-16">
       <div className="max-w-7xl px-8 xl:px-0 mx-auto flex items-center justify-between py-6">
-        <h2 className="hd font-[900] text-3xl">QuickMnemo</h2>
+        <h2 className="hd font-[900] text-2xl lg:text-3xl">QuickMnemo</h2>
 
-        <ul className="flex items-center gap-4 font-bold">
+        <ul className="hidden items-center gap-4 font-bold">
           <Link to="#" className="flex items-center gap-2 text-sm lg:text-base text-[#8E8E93]">
             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -50,6 +50,12 @@ export default function Navbar() {
             <span>Support Us</span>
           </Link>
         </ul>
+
+        <div className="hamburger cursor-pointer">
+          <div className="line1 h-[2px] bg-[#838393] w-[25px] mt-[5px]"></div>
+          <div className="line2 h-[2px] bg-[#838393] w-[25px] mt-[5px]"></div>
+          <div className="line3 h-[2px] bg-[#838393] w-[25px] mt-[5px]"></div>
+        </div>
       </div>
     </nav>
   );

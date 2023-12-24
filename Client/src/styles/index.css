@@ -48,9 +48,12 @@ nav ul a.active span {
   background: linear-gradient(to right, #4d10a3, #8338ec);
 }
 
-.heart_container,
 .modal {
   box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+.heart_container {
+  background: linear-gradient(#ffffff, #d8d8d8);
 }
 
 .generated_mnemo.active {

@@ -6,10 +6,10 @@ export default function upgradeView() {
 
   return (
     <div className={`upgradeView px-8 xl:px-10 ${modalState.upgradeView ? 'block' : 'hidden'}`}>
-      <h2 className="font-[900] text-3xl xl:text-4xl max-w-[400px]">
+      <h2 className="font-[900] text-4xl max-w-[400px]">
         Upgrade to QuickMnemo <span className="plus text-white p-[6px] rounded-lg text-sm">Plus</span>
       </h2>
-      <p className="text-[#838393] text-sm xl:text-lg my-4">Quickmnemo plus gives you access to exciting features to help you memorize better</p>
+      <p className="text-[#838393] text-sm lg:text-lg my-4">Quickmnemo plus gives you access to exciting features to help you memorize better</p>
 
       <div>
         <div className="flex items-center gap-2">
@@ -28,7 +28,7 @@ export default function upgradeView() {
               <path d="M0.5 0H18.5V18H0.5V0Z" fill="#8338EC" />
             </g>
           </svg>
-          <p className="text-[#838393] text-xs xl:text-base">Generate more memorable answers</p>
+          <p className="text-[#838393] text-xs lg:text-base">Generate more memorable answers</p>
         </div>
 
         <div className="flex items-center gap-2 my-2 xl:my-0">
@@ -47,7 +47,7 @@ export default function upgradeView() {
               <path d="M0.5 0H18.5V18H0.5V0Z" fill="#8338EC" />
             </g>
           </svg>
-          <p className="text-[#838393] text-xs xl:text-base">Make it sound anyhow you like, fun? educative?</p>
+          <p className="text-[#838393] text-xs lg:text-base">Make it sound anyhow you like, fun? educative?</p>
         </div>
 
         <div className="flex items-center gap-2">
@@ -66,13 +66,13 @@ export default function upgradeView() {
               <path d="M0.5 0H18.5V18H0.5V0Z" fill="#8338EC" />
             </g>
           </svg>
-          <p className="text-[#838393] text-xs xl:text-base">
+          <p className="text-[#838393] text-xs lg:text-base">
             Support the <span className="underline text-black">team</span> behind Quickmnemo
           </p>
         </div>
       </div>
 
-      <button className="generator text-white rounded-lg py-4 px-6 w-full my-8" onClick={() => toggleModalState('upgradeView')}>
+      <button className="generator text-white rounded-[15px] lg:rounded-lg py-4 px-6 w-full my-8" onClick={() => toggleModalState('upgradeView')}>
         Upgrade for just N950 per month
       </button>
     </div>

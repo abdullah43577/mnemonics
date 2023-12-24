@@ -61,7 +61,7 @@ export default function Generator() {
 
       <div className="bg-gray-200 w-[2px] h-[430px] hidden xl:block"></div>
 
-      <div className="max-h-[200px] w-full xl:w-auto overflow-scroll">
+      <div className="max-h-[200px] w-full xl:w-auto overflow-scroll lg:max-h-full lg:overflow-hidden">
         <div className="flex flex-col gap-4">
           {selectedMnemo?.map((_, i) => (
             <div

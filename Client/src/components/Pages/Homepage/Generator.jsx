@@ -17,7 +17,7 @@ export default function Generator() {
   };
 
   return (
-    <section className="wrapper flex flex-col-reverse lg:flex-row items-start justify-center gap-32 my-16 border border-gray-200 rounded-[35px] p-5 lg:px-[64px] lg:py-[59px]">
+    <section className="wrapper flex flex-col-reverse xl:flex-row items-start justify-center gap-32 my-16 border border-gray-200 rounded-[35px] p-5 lg:px-[64px] lg:py-[59px]">
       <div className="w-full xl:w-auto">
         <div>
           <p className="text-[#8E8E93] text-[20px]">What's your key-letters?</p>
@@ -28,11 +28,11 @@ export default function Generator() {
           <p className="text-[#8E8E93] text-[20px] py-4">How do you want it to sound?</p>
 
           <div className="flex items-center gap-2 xl:gap-4 justify-center lg:text-xl">
-            <div className="border border-gray-200 rounded-lg px-2 h-[65px] flex items-center justify-center xl:p-4 cursor-pointer">Educative</div>
+            <div className="border border-gray-200 rounded-[15px] px-[21px] py-[19px] h-[65px] flex items-center justify-center xl:p-4 cursor-pointer">Educative</div>
 
-            <div className="border border-gray-200 rounded-lg px-2 h-[65px] flex items-center justify-center xl:p-4 cursor-pointer">Educative</div>
+            <div className="border border-gray-200 rounded-[15px] px-[21px] py-[19px] h-[65px] flex items-center justify-center xl:p-4 cursor-pointer">Educative</div>
 
-            <div className="border border-gray-200 rounded-lg px-2 h-[65px] flex items-center justify-center xl:p-4 cursor-pointer">Educative</div>
+            <div className="border border-gray-200 rounded-[15px] px-[21px] py-[19px] h-[65px] flex items-center justify-center xl:p-4 cursor-pointer">Educative</div>
           </div>
         </div>
 

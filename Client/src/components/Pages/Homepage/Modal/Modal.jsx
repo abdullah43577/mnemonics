@@ -8,7 +8,7 @@ export default function Modal() {
   const { isModalOpen, closeModal } = useContext(stateHandler);
 
   return (
-    <div className={`modal bg-white rounded-t-[35px] lg:rounded-2xl fixed bottom-0 lg:bottom-auto lg:-translate-x-[50%] lg:-translate-y-[50%] w-full lg:w-[600px] lg:top-[50%] lg:left-[50%] lg:p-4 z-[5000] ${isModalOpen ? '' : 'hidden'}`}>
+    <div className={`modal bg-white rounded-t-[35px] lg:rounded-2xl fixed bottom-0 lg:bottom-auto lg:-translate-x-[50%] lg:-translate-y-[50%] w-full lg:w-[600px] lg:top-[50%] lg:left-[50%] lg:p-4 z-[5000]  ${isModalOpen ? '' : 'hidden'}`}>
       <div className="border rounded-full p-2 w-[40px] h-[40px] border-gray-200 mt-[20px] mr-[20px] xl:mt-0 xl:mr-0 ml-auto flex items-center justify-center cursor-pointer" onClick={closeModal}>
         <svg width="15" height="15" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path

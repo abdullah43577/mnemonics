@@ -117,3 +117,10 @@ nav ul a.active span {
 .wrapper {
   box-shadow: 0px 0px 15px -5px rgba(55, 55, 55, 0.1);
 }
+
+.fa-google,
+.fa-apple {
+  background: linear-gradient(to right, #8338ec, #cb38e7);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

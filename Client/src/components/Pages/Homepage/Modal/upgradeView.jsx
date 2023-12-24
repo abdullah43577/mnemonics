@@ -6,8 +6,8 @@ export default function upgradeView() {
 
   return (
     <div className={`upgradeView px-4 xl:px-10 ${modalState.upgradeView ? 'block' : 'hidden'}`}>
-      <h2 className="font-[700] text-[40px] lg:text-[48px] leading-[36px] lg:leading-[49px] tracking-[-2.64px]">
-        Upgrade to QuickMnemo <span className="plus text-white p-[10px] rounded-[11px] text-xl tracking-[-1.1px] leading-[36px]">Plus</span>
+      <h2 className="font-[700] text-[40px] xl:text-[48px] leading-[36px] lg:leading-[49px] tracking-[-2.64px]">
+        Upgrade to QuickMnemo <span className="plus text-white w-[51px] h-[32px] text-center rounded-[11px] text-xl tracking-[-1.1px] leading-[36px] inline-block">Plus</span>
       </h2>
       <p className="text-[#838393] lg:text-[24px] lg:leading-[25px] my-4">Quickmnemo plus gives you access to exciting features to help you memorize better</p>
 

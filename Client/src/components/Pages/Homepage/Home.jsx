@@ -8,7 +8,7 @@ export const stateHandler = createContext();
 
 export default function Home() {
   const [input, setInput] = useState('');
-  const [selectedMnemo, setSelectedMnemo] = useState([0, 1, 2, 3, 4]);
+  const [selectedMnemo, setSelectedMnemo] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const [modalState, setModalState] = useState({

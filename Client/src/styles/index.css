@@ -17,6 +17,28 @@ body {
   width: 100%;
 }
 
+/* Targeting the entire scrollbar */
+.mnemonics_wrapper::-webkit-scrollbar {
+  width: 5px; /* Set the width of the scrollbar */
+}
+
+/* Track */
+.mnemonics_wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Set the color of the track (the area behind the thumb) */
+}
+
+/* Handle */
+.mnemonics_wrapper::-webkit-scrollbar-thumb {
+  background: #888; /* Set the color of the thumb (the draggable part of the scrollbar) */
+  border-radius: 15px;
+}
+
+/* Handle on hover */
+.mnemonics_wrapper::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Set the color of the thumb on hover */
+  cursor: grab;
+}
+
 h2 {
   font-family: 'Excon', sans-serif;
 }
@@ -69,6 +91,7 @@ nav ul a.active span {
 
 .plus {
   background: linear-gradient(to right, #8338ec, #cb38e7);
+  font-family: 'Excon', sans-serif;
 }
 
 .overlay {

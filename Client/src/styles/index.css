@@ -85,9 +85,9 @@ nav ul a.active span {
   border-radius: 8px;
 }
 
-.generated_mnemo.active svg path {
+/* .generated_mnemo.active svg path {
   fill: red;
-}
+} */
 
 .plus {
   background: linear-gradient(to right, #8338ec, #cb38e7);
@@ -119,7 +119,8 @@ nav ul a.active span {
 }
 
 .fa-google,
-.fa-apple {
+.fa-apple,
+.generated_mnemo.active .fa-heart {
   background: linear-gradient(to right, #8338ec, #cb38e7);
   background-clip: text;
   -webkit-text-fill-color: transparent;

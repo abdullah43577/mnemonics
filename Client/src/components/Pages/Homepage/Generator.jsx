@@ -13,7 +13,10 @@ export default function Generator() {
 
   const handleGeneratedMnemoClick = function (element) {
     const mnemo = document.querySelector(`.${element}`);
+    const icon = document.querySelector(`.${element} .fa-heart`);
     mnemo.classList.toggle('active');
+    icon.classList.toggle('fa-regular');
+    icon.classList.toggle('fa-solid');
   };
 
   return (
@@ -28,11 +31,11 @@ export default function Generator() {
           <p className="text-[#8E8E93] text-[20px] py-4">How do you want it to sound?</p>
 
           <div className="flex items-center gap-2 xl:gap-4 justify-center lg:text-xl">
-            <div className="border border-gray-200 rounded-[15px] px-[21px] py-[19px] h-[65px] flex items-center justify-center xl:p-4 cursor-pointer">Educative</div>
+            <div className="border border-gray-200 rounded-[15px] py-[19px] px-[10px] lg:px-[21px] lg:py-[19px] lg:h-[65px] flex items-center justify-center xl:p-4 cursor-pointer min-w-[80px]">Fun</div>
 
-            <div className="border border-gray-200 rounded-[15px] px-[21px] py-[19px] h-[65px] flex items-center justify-center xl:p-4 cursor-pointer">Educative</div>
+            <div className="border border-gray-200 rounded-[15px] py-[19px] px-[10px] lg:px-[21px] lg:py-[19px] lg:h-[65px] flex items-center justify-center xl:p-4 cursor-pointer min-w-[80px]">Educative</div>
 
-            <div className="border border-gray-200 rounded-[15px] px-[21px] py-[19px] h-[65px] flex items-center justify-center xl:p-4 cursor-pointer">Educative</div>
+            <div className="border border-gray-200 rounded-[15px] py-[19px] px-[10px] lg:px-[21px] lg:py-[19px] lg:h-[65px] flex items-center justify-center xl:p-4 cursor-pointer min-w-[80px]">Custom</div>
           </div>
         </div>
 
@@ -79,13 +82,9 @@ export default function Generator() {
                 </defs>
               </svg>
 
-              <svg className="absolute top-[10px] left-[10px]" width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M15.8828 0.824951C13.9994 0.824951 12.3278 1.56839 11.1953 2.8462C10.0628 1.56839 8.39125 0.824951 6.50781 0.824951C4.8674 0.826936 3.29473 1.47947 2.13478 2.63942C0.97483 3.79937 0.322297 5.37203 0.320312 7.01245C0.320313 13.7943 10.24 19.2131 10.6619 19.4409C10.8258 19.5292 11.0091 19.5754 11.1953 19.5754C11.3815 19.5754 11.5648 19.5292 11.7288 19.4409C12.1506 19.2131 22.0703 13.7943 22.0703 7.01245C22.0683 5.37203 21.4158 3.79937 20.2558 2.63942C19.0959 1.47947 17.5232 0.826936 15.8828 0.824951ZM15.3681 14.1712C14.0624 15.2792 12.6667 16.2764 11.1953 17.1525C9.72396 16.2764 8.32819 15.2792 7.0225 14.1712C4.99094 12.4284 2.57031 9.77058 2.57031 7.01245C2.57031 5.96816 2.98516 4.96664 3.72358 4.22822C4.462 3.48979 5.46352 3.07495 6.50781 3.07495C8.17656 3.07495 9.57344 3.9562 10.1538 5.37558C10.2382 5.58249 10.3824 5.75956 10.5679 5.8842C10.7534 6.00884 10.9718 6.0754 11.1953 6.0754C11.4188 6.0754 11.6372 6.00884 11.8227 5.8842C12.0082 5.75956 12.1524 5.58249 12.2369 5.37558C12.8172 3.9562 14.2141 3.07495 15.8828 3.07495C16.9271 3.07495 17.9286 3.48979 18.667 4.22822C19.4055 4.96664 19.8203 5.96816 19.8203 7.01245C19.8203 9.77058 17.3997 12.4284 15.3681 14.1712Z"
-                  fill="#D8D8D8"
-                />
-              </svg>
-              <span>Harry Swiftly Raced The Zebras</span>
+              <i className="fa-regular fa-heart text-[23px] text-gray-300 absolute top-[10px] left-[10px]"></i>
+
+              <span className="text-[#838393]">Harry Swiftly Raced The Zebras</span>
             </div>
           ))}
         </div>

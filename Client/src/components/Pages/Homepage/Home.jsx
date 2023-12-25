@@ -41,7 +41,7 @@ export default function Home() {
 
   return (
     <stateHandler.Provider value={{ input, setInput, selectedMnemo, setSelectedMnemo, isModalOpen, setIsModalOpen, modalState, setModalState, toggleModalState, closeModal }}>
-      <div className="max-w-7xl px-8 xl:px-0 mx-auto text-center">
+      <div className="max-w-7xl px-5 xl:px-0 mx-auto text-center">
         <Hero />
 
         <Generator />

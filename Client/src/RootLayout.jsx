@@ -8,7 +8,7 @@ export default function RootLayout() {
         <Navbar />
       </header>
 
-      <main>
+      <main className="pb-16">
         <Outlet />
       </main>
     </>

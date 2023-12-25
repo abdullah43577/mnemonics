@@ -23,11 +23,11 @@ export default function Generator() {
   };
 
   return (
-    <section className="wrapper flex flex-col-reverse xl:flex-row items-start justify-center gap-32 my-16 border border-gray-200 rounded-[35px] p-5 lg:px-[64px] lg:py-[59px]">
+    <section className="wrapper flex flex-col-reverse xl:flex-row items-start justify-center gap-16 lg:gap-32 my-16 border border-gray-200 rounded-[35px] p-5 lg:px-[64px] lg:py-[59px] mb-4">
       <div className="w-full xl:w-auto">
         <div>
           <p className="text-[#8E8E93] text-[20px]">What's your key-letters?</p>
-          <input type="text" className="w-full xl:w-[440px] h-[70px] rounded-md outline-none border border-[#8338EC] text-center mt-3 text-[18px]" value={input} onChange={(e) => setInput(e.target.value)} />
+          <input type="text" className="w-full xl:w-[440px] h-[70px] rounded-[15px] outline-none border border-[#8338EC] text-center mt-3 text-[18px]" value={input} onChange={(e) => setInput(e.target.value)} />
         </div>
 
         <div>
@@ -80,12 +80,12 @@ export default function Generator() {
 
       <div className="bg-gray-200 w-[2px] h-[430px] hidden xl:block"></div>
 
-      <div className="mnemonics_wrapper max-h-[250px] lg:max-h-[430px] w-full xl:w-auto overflow-y-scroll overflow-x-hidden">
+      <div className="mnemonics_wrapper max-h-[350px] lg:max-h-[430px] w-full xl:w-auto overflow-y-scroll overflow-x-hidden">
         <div className="flex flex-col gap-4">
           {selectedMnemo?.map((_, i) => (
             <div
               key={i}
-              className={`generated_mnemo generated_mnemo-${i} border border-gray-200 rounded-lg w-full xl:w-[440px] cursor-pointer h-[85px] relative overflow-hidden flex items-center justify-center`}
+              className={`generated_mnemo generated_mnemo-${i} border border-gray-200 rounded-[15px] w-full xl:w-[440px] cursor-pointer h-[85px] relative overflow-hidden flex items-center justify-center`}
               onClick={() => handleGeneratedMnemoClick(`generated_mnemo-${i}`)}
             >
               <svg className="absolute top-0 left-0" width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -100,7 +100,7 @@ export default function Generator() {
 
               <i className="fa-regular fa-heart text-[23px] text-gray-300 absolute top-[10px] left-[10px]"></i>
 
-              <span className="text-[#838393]">Harry Swiftly Raced The Zebras</span>
+              <span className="text-[#838393] lg:text-xl">Harry Swiftly Raced The Zebras</span>
             </div>
           ))}
         </div>

@@ -9,6 +9,7 @@ const generateMnemonics = async (keyword) => {
       },
     ],
     model: 'gpt-3.5-turbo',
+    maxTokens: '50',
   });
 
   console.log('mnemonics', mnemonics);

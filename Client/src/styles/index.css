@@ -39,7 +39,8 @@ body {
   cursor: grab;
 }
 
-h2 {
+h2,
+.memories {
   font-family: 'Excon', sans-serif;
 }
 
@@ -80,14 +81,10 @@ nav ul a.active span {
 
 .generated_mnemo.active {
   border: 1px solid transparent;
-  border-image: linear-gradient(#eca438, #cb38e7, #8338ec, #ec3838, #c838ec, #ec3879);
+  border-image: linear-gradient(#eca438 50%, #cb38e7 50%, #8338ec 50%, #ec3838 50%, #c838ec 50%, #ec3879 50%);
   border-image-slice: 1;
   border-radius: 8px;
 }
-
-/* .generated_mnemo.active svg path {
-  fill: red;
-} */
 
 .plus {
   background: linear-gradient(to right, #8338ec, #cb38e7);
@@ -121,7 +118,7 @@ nav ul a.active span {
 .fa-google,
 .fa-apple,
 .generated_mnemo.active .fa-heart {
-  background: linear-gradient(to right, #8338ec, #cb38e7);
+  background: linear-gradient(to right, #8338ec, #cb38e7 50%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }

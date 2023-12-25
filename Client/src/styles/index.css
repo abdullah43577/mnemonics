@@ -19,7 +19,7 @@ body {
 
 /* Targeting the entire scrollbar */
 .mnemonics_wrapper::-webkit-scrollbar {
-  width: 5px; /* Set the width of the scrollbar */
+  width: 1px; /* Set the width of the scrollbar */
 }
 
 /* Track */

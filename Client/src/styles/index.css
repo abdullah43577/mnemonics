@@ -67,8 +67,13 @@ nav ul a.active span {
   color: #8338ec !important;
 }
 
-.generator {
+.generator,
+.btns {
   background: linear-gradient(to right, #4d10a3, #8338ec);
+}
+
+.btns {
+  color: white;
 }
 
 .modal {

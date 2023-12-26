@@ -1,9 +1,9 @@
 import { stateHandler } from './Home';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { useMediaQuery } from '@react-hook/media-query';
 
 export default function Generator() {
-  const { input, setInput, selectedMnemo, setSelectedMnemo, isModalOpen, setIsModalOpen } = useContext(stateHandler);
+  const { input, setInput, selectedMnemo, setSelectedMnemo, isModalOpen, setIsModalOpen, selectedCategory, toggleSelectedCategory } = useContext(stateHandler);
 
   const isSmallScreen = useMediaQuery('(max-width:480px)');
 
@@ -15,15 +15,17 @@ export default function Generator() {
   };
 
   const handleGeneratedMnemoClick = function (element) {
-    const mnemo = document.querySelector(`.${element}`);
-    const icon = document.querySelector(`.${element} .fa-heart`);
-    mnemo.classList.toggle('active');
-    icon.classList.toggle('fa-regular');
-    icon.classList.toggle('fa-solid');
+    const el = document.querySelector(`.${element}`);
+    const svg = document.querySelector(`.${element} > svg.inactiveMnemo`);
+    const svg2 = document.querySelector(`.${element} > svg.activeMnemo`);
+
+    el.classList.toggle('active');
+    svg.classList.toggle('invisible');
+    svg2.classList.toggle('invisible');
   };
 
   return (
-    <section className="wrapper flex flex-col-reverse xl:flex-row items-start justify-center gap-16 lg:gap-32 my-16 border border-gray-200 rounded-[35px] p-5 lg:px-[64px] lg:py-[59px] mb-4">
+    <section className="wrapper flex flex-col-reverse md:flex-row items-start justify-center gap-16 xl:gap-32 my-16 border border-gray-200 rounded-[35px] p-5 lg:px-[64px] lg:py-[59px] mb-4">
       <div className="w-full xl:w-auto">
         <div>
           <p className="text-[#8E8E93] text-[20px]">What's your key-letters?</p>
@@ -34,11 +36,15 @@ export default function Generator() {
           <p className="text-[#8E8E93] text-[20px] py-4">How do you want it to sound?</p>
 
           <div className="flex items-center gap-2 xl:gap-4 justify-center lg:text-xl">
-            <div className="border border-gray-200 rounded-[15px] py-[19px] px-[10px] lg:px-[21px] lg:py-[19px] lg:h-[65px] flex items-center justify-center xl:p-4 cursor-pointer min-w-[80px]">Fun</div>
-
-            <div className="border border-gray-200 rounded-[15px] py-[19px] px-[10px] lg:px-[21px] lg:py-[19px] lg:h-[65px] flex items-center justify-center xl:p-4 cursor-pointer min-w-[80px]">Educative</div>
-
-            <div className="border border-gray-200 rounded-[15px] py-[19px] px-[10px] lg:px-[21px] lg:py-[19px] lg:h-[65px] flex items-center justify-center xl:p-4 cursor-pointer min-w-[80px]">Custom</div>
+            {Object.keys(selectedCategory).map((category, i) => (
+              <div
+                key={i}
+                className={`border flex-1 border-gray-200 rounded-[15px] py-[19px] px-[10px] lg:px-[21px] lg:py-[19px] lg:h-[65px] flex items-center justify-center xl:p-4 cursor-pointer min-w-[80px] ${selectedCategory[category] ? 'btns' : ''}`}
+                onClick={() => toggleSelectedCategory(category)}
+              >
+                {category}
+              </div>
+            ))}
           </div>
         </div>
 
@@ -55,7 +61,7 @@ export default function Generator() {
           </div>
         ) : (
           <div className="tf border border-gray-200 rounded-lg relative h-[95px] px-2 w-full my-4 overflow-hidden cursor-pointer flex items-center text-left" onClick={() => setIsModalOpen(!isModalOpen)}>
-            <span className="hd text-2xl tracking-[-0.8px] max-w-[300px] pl-[26px]">Upgrade to plus for more features</span>
+            <span className="hd md:text-lg lg:text-2xl tracking-[-0.8px] max-w-[300px] pl-[26px]">Upgrade to plus for more features</span>
 
             <svg className="absolute right-0 bottom-0" width="75" height="72" viewBox="0 0 75 72" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="0.163086" width="88.6736" height="88.4169" rx="44.2084" fill="url(#paint0_linear_714_3660)" />
@@ -78,29 +84,49 @@ export default function Generator() {
         </button>
       </div>
 
-      <div className="bg-gray-200 w-[2px] h-[430px] hidden xl:block"></div>
+      <div className="bg-gray-200 w-[2px] h-[430px] hidden md:block"></div>
 
       <div className="mnemonics_wrapper max-h-[350px] lg:max-h-[430px] w-full xl:w-auto overflow-y-scroll overflow-x-hidden">
         <div className="flex flex-col gap-4">
-          {selectedMnemo?.map((_, i) => (
+          {selectedMnemo?.map((mnemo, i) => (
             <div
               key={i}
               className={`generated_mnemo generated_mnemo-${i} border border-gray-200 rounded-[15px] w-full xl:w-[440px] cursor-pointer h-[85px] relative overflow-hidden flex items-center justify-center`}
               onClick={() => handleGeneratedMnemoClick(`generated_mnemo-${i}`)}
             >
-              <svg className="absolute top-0 left-0" width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12.9954" cy="13" r="30" fill="url(#paint0_linear_714_3628)" />
+              <svg className="inactiveMnemo absolute top-0 left-0" width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12.9954" cy="13" r="30" fill="url(#paint0_linear_714_3627)" />
+                <path
+                  d="M24.8828 10.825C22.9994 10.825 21.3278 11.5684 20.1953 12.8462C19.0628 11.5684 17.3913 10.825 15.5078 10.825C13.8674 10.8269 12.2947 11.4795 11.1348 12.6394C9.97483 13.7994 9.3223 15.372 9.32031 17.0125C9.32031 23.7943 19.24 29.2131 19.6619 29.4409C19.8258 29.5292 20.0091 29.5754 20.1953 29.5754C20.3815 29.5754 20.5648 29.5292 20.7288 29.4409C21.1506 29.2131 31.0703 23.7943 31.0703 17.0125C31.0683 15.372 30.4158 13.7994 29.2558 12.6394C28.0959 11.4795 26.5232 10.8269 24.8828 10.825ZM24.3681 24.1712C23.0624 25.2792 21.6667 26.2764 20.1953 27.1525C18.724 26.2764 17.3282 25.2792 16.0225 24.1712C13.9909 22.4284 11.5703 19.7706 11.5703 17.0125C11.5703 15.9682 11.9852 14.9666 12.7236 14.2282C13.462 13.4898 14.4635 13.075 15.5078 13.075C17.1766 13.075 18.5734 13.9562 19.1538 15.3756C19.2382 15.5825 19.3824 15.7596 19.5679 15.8842C19.7534 16.0088 19.9718 16.0754 20.1953 16.0754C20.4188 16.0754 20.6372 16.0088 20.8227 15.8842C21.0082 15.7596 21.1524 15.5825 21.2369 15.3756C21.8172 13.9562 23.2141 13.075 24.8828 13.075C25.9271 13.075 26.9286 13.4898 27.667 14.2282C28.4055 14.9666 28.8203 15.9682 28.8203 17.0125C28.8203 19.7706 26.3997 22.4284 24.3681 24.1712Z"
+                  fill="#D8D8D8"
+                />
                 <defs>
-                  <linearGradient id="paint0_linear_714_3628" x1="-17.0046" y1="-17" x2="46.7411" y2="45.8539" gradientUnits="userSpaceOnUse">
+                  <linearGradient id="paint0_linear_714_3627" x1="-17.0046" y1="-17" x2="46.7411" y2="45.8539" gradientUnits="userSpaceOnUse">
                     <stop offset="0.594876" stopColor="white" />
                     <stop offset="1" stopColor="#D8D8D8" />
                   </linearGradient>
                 </defs>
               </svg>
 
-              <i className="fa-regular fa-heart text-[23px] text-gray-300 absolute top-[10px] left-[10px]"></i>
+              <svg className="activeMnemo invisible absolute top-0 left-0" width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12.9954" cy="13" r="30" fill="url(#paint0_linear_714_3622)" />
+                <path
+                  d="M30.6953 17.0125C30.6953 23.575 20.965 28.8869 20.5506 29.1063C20.4414 29.165 20.3193 29.1958 20.1953 29.1958C20.0713 29.1958 19.9492 29.165 19.84 29.1063C19.4256 28.8869 9.69531 23.575 9.69531 17.0125C9.69705 15.4715 10.31 13.9941 11.3997 12.9044C12.4894 11.8147 13.9668 11.2017 15.5078 11.2C17.4438 11.2 19.1388 12.0325 20.1953 13.4397C21.2519 12.0325 22.9469 11.2 24.8828 11.2C26.4239 11.2017 27.9013 11.8147 28.991 12.9044C30.0806 13.9941 30.6936 15.4715 30.6953 17.0125Z"
+                  fill="url(#paint1_linear_714_3622)"
+                />
+                <defs>
+                  <linearGradient id="paint0_linear_714_3622" x1="-17.0046" y1="-17" x2="46.7411" y2="45.8539" gradientUnits="userSpaceOnUse">
+                    <stop offset="0.594876" stopColor="white" />
+                    <stop offset="1" stopColor="#C838EC" stopOpacity="0.1" />
+                  </linearGradient>
+                  <linearGradient id="paint1_linear_714_3622" x1="16.1989" y1="15.4696" x2="24.3687" y2="15.4696" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#8338EC" />
+                    <stop offset="1" stopColor="#CB38E7" />
+                  </linearGradient>
+                </defs>
+              </svg>
 
-              <span className="text-[#838393] lg:text-xl">Harry Swiftly Raced The Zebras</span>
+              <span className="text-[#838393] md:text-base lg:text-lg xl:text-xl">{mnemo}</span>
             </div>
           ))}
         </div>

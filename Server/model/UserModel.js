@@ -3,6 +3,11 @@ const { isEmail } = require('validator');
 const bcrypt = require('bcrypt');
 
 const userSchema = new mongoose.Schema({
+  google_id: {
+    type: String,
+    required: true,
+  },
+
   full_name: {
     type: String,
     required: true,
@@ -12,11 +17,6 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: true,
-  },
-
-  password: {
-    type: String,
-    required: true,
   },
 
   bookmarked_mnemonics: {

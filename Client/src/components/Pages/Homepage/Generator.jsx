@@ -25,11 +25,11 @@ export default function Generator() {
   };
 
   return (
-    <section className="wrapper flex flex-col-reverse md:flex-row items-start justify-center gap-16 xl:gap-32 my-16 border border-gray-200 rounded-[35px] p-5 lg:px-[64px] lg:py-[59px] mb-4">
+    <section className="wrapper flex flex-col-reverse md:flex-row items-start justify-center gap-[110px] lg:gap-[53.5px] mt-[42px] lg:mt-[65.75px] border border-gray-200 rounded-[35px] p-5 lg:py-[59px] lg:px-[64px] mb-4 lg:w-[1150px] mx-auto">
       <div className="w-full xl:w-auto">
         <div>
           <p className="text-[#8E8E93] text-[20px]">What's your key-letters?</p>
-          <input type="text" className="w-full xl:w-[440px] h-[70px] rounded-[15px] outline-none border border-[#8338EC] text-center mt-3 text-[18px]" value={input} onChange={(e) => setInput(e.target.value)} />
+          <input type="text" className="w-full xl:w-[440px] h-[70px] rounded-[15px] outline-none border border-[#8338EC] text-center mt-5 mb-6 lg:mb-[63.58px] text-[18px]" value={input} onChange={(e) => setInput(e.target.value)} />
         </div>
 
         <div>
@@ -86,12 +86,12 @@ export default function Generator() {
 
       <div className="bg-gray-200 w-[2px] h-[430px] hidden md:block"></div>
 
-      <div className="mnemonics_wrapper max-h-[350px] lg:max-h-[430px] w-full xl:w-auto overflow-y-scroll overflow-x-hidden">
+      <div className="mnemonics_wrapper max-h-[250px] lg:max-h-[430px] w-full xl:w-auto overflow-y-scroll overflow-x-hidden">
         <div className="flex flex-col gap-4">
           {selectedMnemo?.map((mnemo, i) => (
             <div
               key={i}
-              className={`generated_mnemo generated_mnemo-${i} border border-gray-200 rounded-[15px] w-full xl:w-[440px] cursor-pointer h-[85px] relative overflow-hidden flex items-center justify-center`}
+              className={`generated_mnemo generated_mnemo-${i} border border-gray-200 rounded-[15px] w-full xl:w-[440px] cursor-pointer h-[75px] lg:h-[85px] relative overflow-hidden flex items-center justify-center`}
               onClick={() => handleGeneratedMnemoClick(`generated_mnemo-${i}`)}
             >
               <svg className="inactiveMnemo absolute top-0 left-0" width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">

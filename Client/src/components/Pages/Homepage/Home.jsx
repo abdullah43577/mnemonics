@@ -8,16 +8,7 @@ export const stateHandler = createContext();
 
 export default function Home() {
   const [input, setInput] = useState('');
-  const [selectedMnemo, setSelectedMnemo] = useState([
-    'Harry Swiftly Raced The Zebras',
-    'Harry Swiftly Raced The Zebras',
-    'Harry Swiftly Raced The Zebras',
-    'Harry Swiftly Raced The Zebras',
-    'Harry Swiftly Raced The Zebras',
-    'Harry Swiftly Raced The Zebras',
-    'Harry Swiftly Raced The Zebras',
-    'Harry Swiftly Raced The Zebras',
-  ]);
+  const [selectedMnemo, setSelectedMnemo] = useState(['Harry Swiftly Raced The Zebras', 'Harry Swiftly Raced The Zebras']);
   const [selectedCategory, setSelectedCategory] = useState({
     Fun: false,
     Educative: false,

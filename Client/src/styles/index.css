@@ -85,10 +85,21 @@ nav ul a.active span {
 }
 
 .generated_mnemo.active {
+  position: relative;
   border: 1px solid transparent;
   border-image: linear-gradient(#eca438 50%, #cb38e7 50%, #8338ec 50%, #ec3838 50%, #c838ec 50%, #ec3879 50%);
   border-image-slice: 1;
-  border-radius: 8px;
+  border-radius: 15px;
+}
+
+.generated_mnemo.active::before,
+.generated_mnemo.active::after {
+  content: '';
+  position: absolute;
+  inset: -0.15rem;
+  border-radius: inherit;
+  z-index: 0;
+  background-blend-mode: screen;
 }
 
 .plus {

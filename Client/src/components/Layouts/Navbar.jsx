@@ -9,8 +9,8 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="border border-gray-200 mb-16">
-      <div className="max-w-7xl px-5 xl:px-0 mx-auto flex items-center justify-between py-6 relative">
+    <nav className="border border-gray-200 mb-[30px] lg:mb-[53px]">
+      <div className="max-w-7xl px-5 xl:px-0 mx-auto flex items-center justify-between h-[99px] relative">
         <h2 className="hd font-[900] text-[25px]">QuickMnemo</h2>
 
         <ul

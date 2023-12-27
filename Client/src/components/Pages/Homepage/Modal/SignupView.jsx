@@ -23,7 +23,7 @@ export default function SignupView() {
         </div>
       </div>
 
-      <div className="hd underline text-lg my-4 text-center cursor-pointer" onClick={() => toggleModalState('signupView')}>
+      <div className="hd underline text-lg my-4 text-center cursor-pointer pb-[36px] lg:pb-0" onClick={() => toggleModalState('signupView')}>
         <span>Have an account? Login here</span>
         <div className="generator max-w-[250px] mx-auto h-[1px] relative -top-1"></div>
       </div>

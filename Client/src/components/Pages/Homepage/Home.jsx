@@ -8,7 +8,16 @@ export const stateHandler = createContext();
 
 export default function Home() {
   const [input, setInput] = useState('');
-  const [selectedMnemo, setSelectedMnemo] = useState(['Harry Swiftly Raced The Zebras', 'Harry Swiftly Raced The Zebras']);
+  const [selectedMnemo, setSelectedMnemo] = useState([
+    'Harry Swiftly Raced The Zebras',
+    'Harry Swiftly Raced The Zebras',
+    'Harry Swiftly Raced The Zebras',
+    'Harry Swiftly Raced The Zebras',
+    'Harry Swiftly Raced The Zebras',
+    'Harry Swiftly Raced The Zebras',
+    'Harry Swiftly Raced The Zebras',
+    'Harry Swiftly Raced The Zebras',
+  ]);
   const [selectedCategory, setSelectedCategory] = useState({
     Fun: false,
     Educative: false,
@@ -46,12 +55,11 @@ export default function Home() {
   };
 
   const toggleSelectedCategory = function (key) {
-    //reset selected category
-    setSelectedCategory((prevValue) => ({ Fun: false, Educative: false, Custom: false }));
-
     //update state in the object
-    setSelectedCategory((prevValue) => ({ ...prevValue, [key]: !prevValue['key'] }));
+    setSelectedCategory((prevValue) => ({ ...prevValue, Fun: false, Educative: false, Custom: false, [key]: !prevValue[key] }));
   };
+
+  useEffect(() => console.log(selectedCategory), [selectedCategory]);
 
   return (
     <stateHandler.Provider value={{ input, setInput, selectedMnemo, setSelectedMnemo, isModalOpen, setIsModalOpen, modalState, setModalState, toggleModalState, closeModal, selectedCategory, toggleSelectedCategory }}>

@@ -25,21 +25,23 @@ export default function Generator() {
   };
 
   return (
-    <section className="wrapper flex flex-col-reverse md:flex-row items-start justify-center gap-[110px] lg:gap-[53.5px] mt-[42px] lg:mt-[65.75px] border border-gray-200 rounded-[35px] p-5 lg:py-[59px] lg:px-[64px] mb-4 lg:w-[1150px] mx-auto">
+    <section className="wrapper flex flex-col-reverse md:flex-row items-start justify-center gap-[44px] lg:gap-[53.5px] mt-[42px] lg:mt-[65.75px] border border-gray-200 rounded-[35px] p-5 lg:py-[59px] lg:px-[64px] mb-4 w-auto xl:w-[1150px] mx-auto">
       <div className="w-full xl:w-auto">
         <div>
-          <p className="text-[#8E8E93] text-[20px]">What's your key-letters?</p>
-          <input type="text" className="w-full xl:w-[440px] h-[70px] rounded-[15px] outline-none border border-[#8338EC] text-center mt-5 mb-6 lg:mb-[63.58px] text-[18px]" value={input} onChange={(e) => setInput(e.target.value)} />
+          <p className="text-[#8E8E93] md:text-[20px]">What's your key-letters?</p>
+          <input type="text" className="w-full xl:w-[440px] h-[50px] md:h-[70px] rounded-[15px] outline-none border border-[#8338EC] text-center mt-5 mb-6 lg:mb-[63.58px] text-[18px]" value={input} onChange={(e) => setInput(e.target.value)} />
         </div>
 
         <div>
-          <p className="text-[#8E8E93] text-[20px] py-4">How do you want it to sound?</p>
+          <p className="text-[#8E8E93] md:text-[20px] mb-5">How do you want it to sound?</p>
 
           <div className="flex items-center gap-2 xl:gap-4 justify-center lg:text-xl">
             {Object.keys(selectedCategory).map((category, i) => (
               <div
                 key={i}
-                className={`border flex-1 border-gray-200 rounded-[15px] py-[19px] px-[10px] lg:px-[21px] lg:py-[19px] lg:h-[65px] flex items-center justify-center xl:p-4 cursor-pointer min-w-[80px] ${selectedCategory[category] ? 'btns' : ''}`}
+                className={`border flex-1 border-gray-200 rounded-[15px] py-[19px] px-[10px] lg:px-[21px] lg:py-[19px] h-[50px] lg:h-[65px] flex items-center justify-center xl:p-4 cursor-pointer min-w-[80px] ${
+                  selectedCategory[category] ? 'btns' : ''
+                }`}
                 onClick={() => toggleSelectedCategory(category)}
               >
                 {category}
@@ -60,8 +62,8 @@ export default function Generator() {
             <div className="generator w-full max-w-[240px] mx-auto h-[1px] absolute bottom-0"></div>
           </div>
         ) : (
-          <div className="tf border border-gray-200 rounded-lg relative h-[95px] px-2 w-full my-4 overflow-hidden cursor-pointer flex items-center text-left" onClick={() => setIsModalOpen(!isModalOpen)}>
-            <span className="hd md:text-lg lg:text-2xl tracking-[-0.8px] max-w-[300px] pl-[26px]">Upgrade to plus for more features</span>
+          <div className="tf border border-gray-200 rounded-lg relative h-[95px] px-2 w-full mb-[37.43px] mt-[61.61px] overflow-hidden cursor-pointer flex items-center text-left" onClick={() => setIsModalOpen(!isModalOpen)}>
+            <span className="hd md:text-lg lg:text-2xl leading-[26px] tracking-[-0.8px] max-w-[300px] pl-[26px]">Upgrade to plus for more features</span>
 
             <svg className="absolute right-0 bottom-0" width="75" height="72" viewBox="0 0 75 72" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="0.163086" width="88.6736" height="88.4169" rx="44.2084" fill="url(#paint0_linear_714_3660)" />
@@ -79,19 +81,19 @@ export default function Generator() {
           </div>
         )}
 
-        <button className="generator rounded-[15px] text-white py-4 px-6 w-full mb-8" onClick={generateMnemo}>
+        <button className="generator rounded-[15px] text-white py-4 px-6 w-full mb-5" onClick={generateMnemo}>
           Start Generator
         </button>
       </div>
 
-      <div className="bg-gray-200 w-[2px] h-[430px] hidden md:block"></div>
+      <div className="bg-gray-200 w-full h-[2px] md:w-[2px] md:h-[550px]"></div>
 
-      <div className="mnemonics_wrapper max-h-[250px] lg:max-h-[430px] w-full xl:w-auto overflow-y-scroll overflow-x-hidden">
+      <div className="mnemonics_wrapper max-h-[160px] lg:max-h-[550px] w-full xl:w-auto overflow-y-scroll overflow-x-hidden">
         <div className="flex flex-col gap-4">
           {selectedMnemo?.map((mnemo, i) => (
             <div
               key={i}
-              className={`generated_mnemo generated_mnemo-${i} border border-gray-200 rounded-[15px] w-full xl:w-[440px] cursor-pointer h-[75px] lg:h-[85px] relative overflow-hidden flex items-center justify-center`}
+              className={`generated_mnemo generated_mnemo-${i} border border-gray-200 rounded-[15px] w-full xl:w-[440px] cursor-pointer h-[70px] md:h-[75px] lg:h-[85px] relative overflow-hidden flex items-center justify-center`}
               onClick={() => handleGeneratedMnemoClick(`generated_mnemo-${i}`)}
             >
               <svg className="inactiveMnemo absolute top-0 left-0" width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -84,22 +84,13 @@ nav ul a.active span {
   background: linear-gradient(#ffffff, #d8d8d8);
 }
 
+/* gradient borders */
 .generated_mnemo.active {
-  position: relative;
+  background: transparent;
+  background-image: linear-gradient(90deg, white, white), linear-gradient(90deg, #eca438, #cb38e7, #8338ec, #ec3838, #c838ec, #ec3879);
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
   border: 1px solid transparent;
-  border-image: linear-gradient(#eca438 50%, #cb38e7 50%, #8338ec 50%, #ec3838 50%, #c838ec 50%, #ec3879 50%);
-  border-image-slice: 1;
-  border-radius: 15px;
-}
-
-.generated_mnemo.active::before,
-.generated_mnemo.active::after {
-  content: '';
-  position: absolute;
-  inset: -0.15rem;
-  border-radius: inherit;
-  z-index: 0;
-  background-blend-mode: screen;
 }
 
 .plus {

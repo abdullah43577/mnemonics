@@ -23,7 +23,7 @@ export default function LoginView() {
         </div>
       </div>
 
-      <div className="hd underline text-lg my-4 text-center cursor-pointer">
+      <div className="hd underline text-lg my-4 text-center cursor-pointer pb-[36px] lg:pb-0">
         <span>Don't have an account? Signup here</span>
         <div className="generator max-w-[310px] mx-auto h-[1px] relative -top-1" onClick={() => toggleModalState('loginView')}></div>
       </div>

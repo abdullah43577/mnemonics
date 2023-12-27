@@ -10,13 +10,13 @@ export default function LoginView() {
       <p className="text-[#838393] lg:text-[24px] lg:leading-[25px] my-4">Welcome back champ! Sign in to your QuickMnemo account and continue your memorization journey</p>
 
       <div>
-        <div className="border border-gray-200 rounded-lg w-full flex items-center justify-center gap-2 h-[60px] py-[20px] cursor-pointer mb-6">
+        <div className="border border-gray-200 rounded-[15px] w-full flex items-center justify-center gap-2 h-[60px] py-[20px] cursor-pointer mb-6">
           <i className="fa-brands fa-google text-[20px]"></i>
 
           <p className="text-[#838393]">Continue with Google</p>
         </div>
 
-        <div className="border border-gray-200 rounded-lg w-full flex items-center justify-center gap-2 h-[60px] py-[20px] cursor-pointer mb-6">
+        <div className="border border-gray-200 rounded-[15px] w-full flex items-center justify-center gap-2 h-[60px] py-[20px] cursor-pointer mb-6">
           <i className="fa-brands fa-apple text-[25px]"></i>
 
           <p className="text-[#838393]">Continue with Apple</p>

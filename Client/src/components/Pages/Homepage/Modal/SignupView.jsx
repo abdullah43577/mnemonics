@@ -1,8 +1,10 @@
-import { useContext, useState } from 'react';
-import { stateHandler } from '../Home';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleModalState } from '../../../../redux/modalState';
 
 export default function SignupView() {
-  const { modalState, toggleModalState } = useContext(stateHandler);
+  // const { modalState, toggleModalState } = useContext(stateHandler);
+  const { modalState } = useSelector((state) => state.modalState);
+  const dispatch = useDispatch();
 
   return (
     <div className={`signupView px-8 xl:px-10 ${modalState.signupView ? 'block' : 'hidden'}`}>
@@ -23,7 +25,7 @@ export default function SignupView() {
         </div>
       </div>
 
-      <div className="hd underline text-lg my-4 text-center cursor-pointer pb-[36px] lg:pb-0" onClick={() => toggleModalState('signupView')}>
+      <div className="hd underline text-lg my-4 text-center cursor-pointer pb-[36px] lg:pb-0" onClick={() => dispatch(toggleModalState('signupView'))}>
         <span>Have an account? Login here</span>
         <div className="generator max-w-[250px] mx-auto h-[1px] relative -top-1"></div>
       </div>

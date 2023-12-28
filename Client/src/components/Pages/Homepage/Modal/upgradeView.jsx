@@ -1,8 +1,10 @@
-import { useContext } from 'react';
-import { stateHandler } from '../Home';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleModalState } from '../../../../redux/modalState';
 
-export default function upgradeView() {
-  const { modalState, toggleModalState } = useContext(stateHandler);
+export default function SignupView() {
+  // const { modalState, toggleModalState } = useContext(stateHandler);
+  const { modalState } = useSelector((state) => state.modalState);
+  const dispatch = useDispatch();
 
   return (
     <div className={`upgradeView px-4 xl:px-10 ${modalState.upgradeView ? 'block' : 'hidden'}`}>
@@ -72,7 +74,7 @@ export default function upgradeView() {
         </div>
       </div>
 
-      <button className="generator text-white lg:text-[22.134px] leading-5 lg:leading-[22.134px] rounded-[15px] py-[19px] lg:py-[34.5px] px-6 w-full my-8 lg:h-[85px]" onClick={() => toggleModalState('upgradeView')}>
+      <button className="generator text-white lg:text-[22.134px] leading-5 lg:leading-[22.134px] rounded-[15px] py-[19px] lg:py-[34.5px] px-6 w-full my-8 lg:h-[85px]" onClick={() => dispatch(toggleModalState('upgradeView'))}>
         Upgrade for just ₦950 per month
       </button>
     </div>

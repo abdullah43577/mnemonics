@@ -1,66 +1,24 @@
-import { useState, createContext } from 'react';
+import { createContext } from 'react';
 import Hero from './Hero';
 import Generator from './Generator';
 import Modal from './Modal/Modal';
 import Overlay from './Overlay';
+import { useDispatch } from 'react-redux';
+import { toggleModal } from '../../../redux/toggleModal';
+import { resetModalState } from '../../../redux/modalState';
 
 export const stateHandler = createContext();
 
 export default function Home() {
-  const [input, setInput] = useState('');
-  const [selectedMnemo, setSelectedMnemo] = useState([
-    'Harry Swiftly Raced The Zebras',
-    'Harry Swiftly Raced The Zebras',
-    'Harry Swiftly Raced The Zebras',
-    'Harry Swiftly Raced The Zebras',
-    'Harry Swiftly Raced The Zebras',
-    'Harry Swiftly Raced The Zebras',
-    'Harry Swiftly Raced The Zebras',
-    'Harry Swiftly Raced The Zebras',
-  ]);
-  const [selectedCategory, setSelectedCategory] = useState({
-    Fun: false,
-    Educative: false,
-    Custom: false,
-  });
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const [modalState, setModalState] = useState({
-    upgradeView: true,
-    signupView: false,
-    loginView: false,
-  });
+  const dispatch = useDispatch();
 
   const closeModal = function () {
-    setIsModalOpen(false);
-    setModalState({
-      upgradeView: true,
-      signupView: false,
-      loginView: false,
-    });
-  };
-
-  const toggleModalState = function (key) {
-    setModalState((_) => {
-      // toggle the states of the classes one after the other
-      if (key === 'upgradeView') {
-        return { upgradeView: false, signupView: true, loginView: false };
-      } else if (key === 'signupView') {
-        return { upgradeView: false, signupView: false, loginView: true };
-      } else {
-        return { upgradeView: true, signupView: false, loginView: false };
-      }
-    });
-  };
-
-  const toggleSelectedCategory = function (key) {
-    //update state in the object
-    setSelectedCategory((prevValue) => ({ ...prevValue, Fun: false, Educative: false, Custom: false, [key]: !prevValue[key] }));
+    dispatch(toggleModal());
+    dispatch(resetModalState());
   };
 
   return (
-    <stateHandler.Provider value={{ input, setInput, selectedMnemo, setSelectedMnemo, isModalOpen, setIsModalOpen, modalState, setModalState, toggleModalState, closeModal, selectedCategory, toggleSelectedCategory }}>
+    <stateHandler.Provider value={{ closeModal }}>
       <div className="max-w-7xl px-5 xl:px-0 mx-auto text-center">
         <Hero />
 

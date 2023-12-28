@@ -1,12 +1,15 @@
-import { useContext, useEffect, useState } from 'react';
-import { stateHandler } from '../Home';
-import UpgradeView from './upgradeView';
+import UpgradeView from './UpgradeView';
 import SignupView from './signupView';
 import LoginView from './LoginView';
 import { useMediaQuery } from '@react-hook/media-query';
+import { useSelector } from 'react-redux';
+import { useContext } from 'react';
+import { stateHandler } from '../Home';
 
 export default function Modal() {
-  const { isModalOpen, closeModal } = useContext(stateHandler);
+  const { isModalOpen } = useSelector((state) => state.modalWindow);
+  const { closeModal } = useContext(stateHandler);
+
   const isSmallScreen = useMediaQuery('(max-width:768px)');
 
   return (
@@ -15,6 +18,7 @@ export default function Modal() {
         isModalOpen ? (isSmallScreen ? 'translate-y-0' : '') : isSmallScreen ? 'translate-y-full' : 'hidden'
       } `}
     >
+      {/* onClick={closeModal} */}
       <div className="border rounded-full p-2 w-[40px] h-[40px] border-gray-200 mt-[20px] mr-[20px] xl:mt-0 xl:mr-0 ml-auto flex items-center justify-center cursor-pointer" onClick={closeModal}>
         <svg width="15" height="15" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path

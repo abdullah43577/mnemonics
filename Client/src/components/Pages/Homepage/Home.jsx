@@ -1,4 +1,4 @@
-import { useState, createContext, useEffect } from 'react';
+import { useState, createContext } from 'react';
 import Hero from './Hero';
 import Generator from './Generator';
 import Modal from './Modal/Modal';
@@ -58,8 +58,6 @@ export default function Home() {
     //update state in the object
     setSelectedCategory((prevValue) => ({ ...prevValue, Fun: false, Educative: false, Custom: false, [key]: !prevValue[key] }));
   };
-
-  useEffect(() => console.log(selectedCategory), [selectedCategory]);
 
   return (
     <stateHandler.Provider value={{ input, setInput, selectedMnemo, setSelectedMnemo, isModalOpen, setIsModalOpen, modalState, setModalState, toggleModalState, closeModal, selectedCategory, toggleSelectedCategory }}>

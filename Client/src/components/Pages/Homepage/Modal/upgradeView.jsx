@@ -72,8 +72,8 @@ export default function upgradeView() {
         </div>
       </div>
 
-      <button className="generator text-white rounded-[15px] py-[26px] px-6 w-full my-8" onClick={() => toggleModalState('upgradeView')}>
-        Upgrade for just N950 per month
+      <button className="generator text-white lg:text-[22.134px] leading-5 lg:leading-[22.134px] rounded-[15px] py-[19px] lg:py-[34.5px] px-6 w-full my-8 lg:h-[85px]" onClick={() => toggleModalState('upgradeView')}>
+        Upgrade for just ₦950 per month
       </button>
     </div>
   );

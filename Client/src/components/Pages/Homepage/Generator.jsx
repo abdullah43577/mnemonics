@@ -28,18 +28,18 @@ export default function Generator() {
     <section className="wrapper flex flex-col-reverse md:flex-row items-start justify-center gap-[44px] lg:gap-[53.5px] mt-[42px] lg:mt-[65.75px] border border-gray-200 rounded-[35px] p-5 lg:py-[59px] lg:px-[64px] mb-4 w-auto xl:w-[1150px] mx-auto">
       <div className="w-full xl:w-auto">
         <div>
-          <p className="text-[#8E8E93] md:text-[20px]">What's your key-letters?</p>
+          <p className="text-[#8E8E93] md:text-[20px] tracking-[-0.8px]">What's your key-letters?</p>
           <input type="text" className="w-full xl:w-[440px] h-[50px] md:h-[70px] rounded-[15px] outline-none border border-[#8338EC] text-center mt-5 mb-6 lg:mb-[63.58px] text-[18px]" value={input} onChange={(e) => setInput(e.target.value)} />
         </div>
 
         <div>
-          <p className="text-[#8E8E93] md:text-[20px] mb-5">How do you want it to sound?</p>
+          <p className="text-[#8E8E93] md:text-[20px] mb-5 tracking-[-0.8px]">How do you want it to sound?</p>
 
           <div className="flex items-center gap-2 xl:gap-4 justify-center lg:text-xl">
             {Object.keys(selectedCategory).map((category, i) => (
               <div
                 key={i}
-                className={`border flex-1 border-gray-200 rounded-[15px] py-[19px] px-[10px] lg:px-[21px] lg:py-[19px] h-[50px] lg:h-[65px] flex items-center justify-center xl:p-4 cursor-pointer min-w-[80px] ${
+                className={`border flex-1 border-gray-200 rounded-[15px] py-[19px] px-[10px] lg:px-[21px] lg:py-[19px] h-[50px] lg:h-[65px] flex items-center justify-center xl:p-4 cursor-pointer min-w-[80px] tracking-[-0.8px] ${
                   selectedCategory[category] ? 'btns' : ''
                 }`}
                 onClick={() => toggleSelectedCategory(category)}
@@ -81,7 +81,7 @@ export default function Generator() {
           </div>
         )}
 
-        <button className="generator rounded-[15px] text-white py-4 px-6 w-full mb-5" onClick={generateMnemo}>
+        <button className="generator rounded-[15px] text-white py-4 px-6 w-full mb-5 md:h-[62px]" onClick={generateMnemo}>
           Start Generator
         </button>
       </div>
@@ -93,7 +93,7 @@ export default function Generator() {
           {selectedMnemo?.map((mnemo, i) => (
             <div
               key={i}
-              className={`generated_mnemo generated_mnemo-${i} border border-gray-200 rounded-[15px] w-full xl:w-[440px] cursor-pointer h-[70px] md:h-[75px] lg:h-[85px] relative overflow-hidden flex items-center justify-center`}
+              className={`generated_mnemo generated_mnemo-${i} border border-gray-200 rounded-[15px] w-full xl:w-[440px] cursor-pointer h-[70px] md:h-[75px] lg:h-[85px] relative overflow-hidden flex items-center justify-center tracking-[-0.8px]`}
               onClick={() => handleGeneratedMnemoClick(`generated_mnemo-${i}`)}
             >
               <svg className="inactiveMnemo absolute top-0 left-0" width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -1,14 +1,20 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { stateHandler } from '../Home';
 import UpgradeView from './upgradeView';
 import SignupView from './signupView';
 import LoginView from './LoginView';
+import { useMediaQuery } from '@react-hook/media-query';
 
 export default function Modal() {
   const { isModalOpen, closeModal } = useContext(stateHandler);
+  const isSmallScreen = useMediaQuery('(max-width:768px)');
 
   return (
-    <div className={`modal bg-white rounded-t-[35px] lg:rounded-2xl fixed bottom-0 lg:bottom-auto lg:-translate-x-[50%] lg:-translate-y-[50%] w-full lg:w-[600px] lg:top-[50%] lg:left-[50%] lg:p-4 z-[5000]  ${isModalOpen ? '' : 'hidden'}`}>
+    <div
+      className={`modal bg-white rounded-t-[35px] md:rounded-[15px] fixed bottom-0 md:bottom-auto md:-translate-x-[50%] md:-translate-y-[50%] w-full md:w-[600px] md:top-[50%] md:left-[50%] md:p-4 z-[5000]  ${
+        isModalOpen ? (isSmallScreen ? 'translate-y-0' : '') : isSmallScreen ? 'translate-y-full' : 'hidden'
+      } `}
+    >
       <div className="border rounded-full p-2 w-[40px] h-[40px] border-gray-200 mt-[20px] mr-[20px] xl:mt-0 xl:mr-0 ml-auto flex items-center justify-center cursor-pointer" onClick={closeModal}>
         <svg width="15" height="15" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path

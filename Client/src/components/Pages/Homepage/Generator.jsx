@@ -24,13 +24,13 @@ export default function Generator() {
   };
 
   return (
-    <section className="wrapper flex flex-col-reverse md:flex-row items-start justify-center gap-[44px] lg:gap-[53.5px] mt-[42px] lg:mt-[65.75px] border border-gray-200 rounded-[35px] p-5 lg:py-[59px] lg:px-[64px] mb-4 w-auto xl:w-[1150px] mx-auto">
+    <section className="wrapper flex flex-col-reverse md:flex-row items-start justify-center gap-[44px] lg:gap-[53.5px] mt-[42px] lg:mt-[65.75px] border border-gray-200 rounded-[35px] p-5 lg:py-[59px] lg:px-[64px] mb-4 w-auto xl:w-full mx-auto">
       <div className="w-full xl:w-auto">
         <div>
           <p className="text-[#8E8E93] md:text-[20px] tracking-[-0.8px]">What's your key-letters?</p>
           <input
             type="text"
-            className="w-full xl:w-[440px] h-[50px] md:h-[70px] rounded-[15px] outline-none border border-[#8338EC] text-center mt-5 mb-6 lg:mb-[63.58px] text-[18px]"
+            className="w-full xl:w-[440px] h-[50px] md:h-[70px] rounded-[15px] outline-none border-[0.8px] border-gray-200 text-center mt-5 mb-6 lg:mb-[63.58px] text-[18px] uppercase"
             value={input}
             onChange={(e) => dispatch(setInput(e.target.value))}
           />
@@ -55,18 +55,21 @@ export default function Generator() {
         </div>
 
         {isSmallScreen ? (
-          <div className="hd underline text-sm my-4 text-center cursor-pointer flex items-center justify-center relative" onClick={() => dispatch(toggleModal())}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+          <div className="my-4 text-center cursor-pointer flex items-center justify-center" onClick={() => dispatch(toggleModal())}>
+            <svg className="relative top-[2px]" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
               <path
                 d="M6.98065 13.9167C6.91301 13.9166 6.8459 13.9047 6.78232 13.8817C6.65967 13.8368 6.55565 13.752 6.4869 13.6409C6.41815 13.5299 6.38866 13.399 6.40316 13.2692L6.85232 9.13334H3.41649C3.31051 9.1335 3.2065 9.10479 3.11561 9.05029C3.02473 8.99579 2.95041 8.91756 2.90063 8.824C2.85085 8.73045 2.8275 8.6251 2.83309 8.51927C2.83867 8.41344 2.87298 8.31114 2.93232 8.22334L7.53482 1.34001C7.60761 1.23229 7.7143 1.15197 7.83795 1.11181C7.9616 1.07165 8.09513 1.07395 8.21732 1.11834C8.33479 1.16195 8.4351 1.24223 8.50339 1.34729C8.57168 1.45235 8.60432 1.57661 8.59649 1.70167L8.14732 5.86667H11.5832C11.6891 5.86651 11.7931 5.89522 11.884 5.94972C11.9749 6.00422 12.0492 6.08245 12.099 6.17601C12.1488 6.26957 12.1721 6.37491 12.1666 6.48074C12.161 6.58657 12.1267 6.68887 12.0673 6.77667L7.46482 13.66C7.41131 13.7392 7.33918 13.804 7.25475 13.8487C7.17033 13.8935 7.07621 13.9168 6.98065 13.9167Z"
                 fill="#8338EC"
               />
             </svg>
-            <span>Upgrade to plus for more features</span>
-            <div className="generator w-full max-w-[240px] mx-auto h-[1px] absolute bottom-0"></div>
+
+            <div className="relative">
+              <span className="hd text-sm">Upgrade to plus for more features</span>
+              <div className="bg-[#8338ec] w-full mx-auto h-[1px] absolute bottom-0 max-w-[200px]"></div>
+            </div>
           </div>
         ) : (
-          <div className="tf border border-gray-200 rounded-lg relative h-[95px] px-2 w-full mb-[37.43px] mt-[61.61px] overflow-hidden cursor-pointer flex items-center text-left" onClick={() => dispatch(toggleModal())}>
+          <div className="tf border border-gray-200 rounded-[15px] relative h-[95px] px-2 w-full mb-[37.43px] mt-[61.61px] overflow-hidden cursor-pointer flex items-center text-left" onClick={() => dispatch(toggleModal())}>
             <span className="hd md:text-lg lg:text-2xl leading-[26px] tracking-[-0.8px] max-w-[300px] pl-[26px]">Upgrade to plus for more features</span>
 
             <svg className="absolute right-0 bottom-0" width="75" height="72" viewBox="0 0 75 72" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -85,7 +88,7 @@ export default function Generator() {
           </div>
         )}
 
-        <button className="generator rounded-[15px] text-white py-4 px-6 w-full mb-5 md:h-[62px]" onClick={generateMnemoFunc}>
+        <button className="generator rounded-[15px] text-white py-4 px-6 w-full mb-5 md:h-[62px] font-[600] xl:text-xl" onClick={generateMnemoFunc}>
           Start Generator
         </button>
       </div>

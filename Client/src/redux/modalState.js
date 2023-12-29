@@ -22,14 +22,12 @@ export const modalStateSlice = createSlice({
             ...state.modalState,
             upgradeView: false,
             signupView: true,
-            loginView: false,
           },
         };
       } else if (payload === 'signupView') {
         return {
           modalState: {
             ...state.modalState,
-            upgradeView: false,
             signupView: false,
             loginView: true,
           },
@@ -39,8 +37,6 @@ export const modalStateSlice = createSlice({
           modalState: {
             ...state.modalState,
             upgradeView: true,
-            signupView: false,
-            loginView: false,
           },
         };
       }

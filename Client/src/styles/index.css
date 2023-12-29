@@ -9,6 +9,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
+  letter-spacing: -0.8px;
 }
 
 html,
@@ -51,26 +52,36 @@ h2,
 }
 
 nav ul {
-  transition: height 1s ease, padding 1s ease;
+  transition: height 1s ease, padding 3s ease-in;
 }
 
 nav ul a:hover svg path,
 nav ul a:hover span {
   fill: #8338ec !important;
   color: #8338ec !important;
-  transition: all 1000ms linear;
+  transition: all 500ms linear;
 }
 
-nav ul a.active svg path,
-nav ul a.active span {
+nav ul a.active svg path {
   fill: #8338ec !important;
-  color: #8338ec !important;
+}
+
+nav ul a.active span {
+  background: linear-gradient(90deg, #8338ec 30.97%, #cb38e7 69.87%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .generator,
 .btns {
-  background: linear-gradient(to right, #4d10a3, #8338ec);
-  border: 0.8px solid #4d10a3;
+  border: 1px solid #4d10a3;
+  background: #8338ec;
+}
+
+input:focus {
+  border-color: #8338ec;
+  box-shadow: 0px 0px 0px 3px rgba(131, 56, 236, 0.15);
 }
 
 .btns {
@@ -79,7 +90,7 @@ nav ul a.active span {
 
 .modal {
   box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
-  transition: transform 1000ms linear;
+  transition: transform 400ms linear;
 }
 
 .heart_container {

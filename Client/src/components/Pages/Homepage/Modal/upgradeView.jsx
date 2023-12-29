@@ -49,7 +49,8 @@ export default function SignupView() {
               <path d="M0.5 0H18.5V18H0.5V0Z" fill="#8338EC" />
             </g>
           </svg>
-          <p className="text-[#838393] lg:text-[24px]">Make it sound anyhow you like, fun? educative?</p>
+          {/* educative? */}
+          <p className="text-[#838393] lg:text-[24px]">Make it sound anyhow you like, fun?</p>
         </div>
 
         <div className="flex items-center gap-2">
@@ -74,7 +75,7 @@ export default function SignupView() {
         </div>
       </div>
 
-      <button className="generator text-white lg:text-[22.134px] leading-5 lg:leading-[22.134px] rounded-[15px] py-[19px] lg:py-[34.5px] px-6 w-full my-8 lg:h-[85px]" onClick={() => dispatch(toggleModalState('upgradeView'))}>
+      <button className="generator text-white lg:text-[22.134px] leading-5 lg:leading-[22.134px] rounded-[15px] py-[19px] lg:py-[34.5px] px-6 w-full my-8 lg:h-[85px] font-[600]" onClick={() => dispatch(toggleModalState('upgradeView'))}>
         Upgrade for just ₦950 per month
       </button>
     </div>

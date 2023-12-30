@@ -1,6 +1,6 @@
 import UpgradeView from './UpgradeView';
-import SignupView from './signupView';
-import LoginView from './LoginView';
+import LoginView from './SignupView';
+import SignupView from './LoginView';
 import { useMediaQuery } from '@react-hook/media-query';
 import { useSelector } from 'react-redux';
 import { useContext } from 'react';

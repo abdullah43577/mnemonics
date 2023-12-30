@@ -1,8 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleModalState } from '../../../../redux/modalState';
 
-export default function SignupView() {
-  // const { modalState, toggleModalState } = useContext(stateHandler);
+export default function UpgradeView() {
   const { modalState } = useSelector((state) => state.modalState);
   const dispatch = useDispatch();
 

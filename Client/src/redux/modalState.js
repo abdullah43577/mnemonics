@@ -37,6 +37,7 @@ export const modalStateSlice = createSlice({
           modalState: {
             ...state.modalState,
             upgradeView: true,
+            loginView: false,
           },
         };
       }

@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggleModalState } from '../../../../redux/modalState';
 
 export default function SignupView() {
-  // const { modalState, toggleModalState } = useContext(stateHandler);
   const { modalState } = useSelector((state) => state.modalState);
   const dispatch = useDispatch();
 
@@ -25,9 +24,9 @@ export default function SignupView() {
         </div>
       </div>
 
-      <div className="hd underline text-lg my-4 text-center cursor-pointer pb-[36px] lg:pb-0" onClick={() => dispatch(toggleModalState('signupView'))}>
-        <span>Have an account? Login here</span>
-        <div className="generator max-w-[250px] mx-auto h-[1px] relative -top-1"></div>
+      <div className="relative flex flex-col items-center justify-center cursor-pointer my-4 pb-[36px] lg:pb-0 w-full" onClick={() => dispatch(toggleModalState('signupView'))}>
+        <span className="hd text-lg">Have an account? Login here</span>
+        <div className="bg-[#8338ec] w-full mx-auto h-[1px] absolute top-6 max-w-[220px]"></div>
       </div>
     </div>
   );

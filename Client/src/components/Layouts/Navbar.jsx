@@ -11,7 +11,7 @@ export default function Navbar() {
   return (
     <nav className="border border-gray-200 mb-[30px] lg:mb-[53px]">
       <div className="max-w-[1440px] px-5 xl:px-[162px] mx-auto flex items-center justify-between py-5 md:py-0 md:h-[99px] relative">
-        <Link to="/" className="hd font-[900] text-[25px]">
+        <Link to="/" onClick={handleNavToggle} className="hd font-[900] text-[25px]">
           QuickMnemo
         </Link>
 

@@ -25,9 +25,9 @@ export default function LoginView() {
         </div>
       </div>
 
-      <div className="hd underline text-lg my-4 text-center cursor-pointer pb-[36px] lg:pb-0">
-        <span>Don't have an account? Signup here</span>
-        <div className="generator max-w-[310px] mx-auto h-[1px] relative -top-1" onClick={() => dispatch(toggleModalState('loginView'))}></div>
+      <div className="relative flex flex-col items-center justify-center cursor-pointer my-4 pb-[36px] lg:pb-0 w-full" onClick={() => dispatch(toggleModalState('loginView'))}>
+        <span className="hd text-lg">Don't have an account? Signup here</span>
+        <div className="bg-[#8338ec] w-full mx-auto h-[1px] absolute top-6 max-w-[280px]"></div>
       </div>
     </div>
   );

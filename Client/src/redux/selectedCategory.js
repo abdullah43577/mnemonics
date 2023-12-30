@@ -16,7 +16,9 @@ export const selectedCategorySlice = createSlice({
       const { payload } = action;
       return {
         selectedCategory: {
-          ...state.selectedCategory,
+          Fun: false,
+          Educative: false,
+          Custom: false,
           [payload]: !state.selectedCategory[payload],
         },
       };

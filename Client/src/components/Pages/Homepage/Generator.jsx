@@ -24,7 +24,7 @@ export default function Generator() {
   };
 
   return (
-    <section className="wrapper flex flex-col-reverse md:flex-row items-start justify-center gap-[44px] lg:gap-[53.5px] mt-[42px] lg:mt-[65.75px] border border-gray-200 rounded-[35px] p-5 lg:py-[59px] lg:px-[64px] mb-4 w-auto xl:w-full mx-auto">
+    <section className="wrapper flex flex-col-reverse md:flex-row items-start justify-center gap-[44px] lg:gap-[53.5px] mt-[42px] lg:mt-[65.75px] border border-gray-200 rounded-[35px] p-5 lg:p-[59px] mb-4 w-auto xl:w-full mx-auto">
       <div className="w-full xl:w-auto">
         <div>
           <p className="text-[#8E8E93] md:text-[20px] tracking-[-0.8px]">What's your key-letters?</p>
@@ -93,9 +93,9 @@ export default function Generator() {
         </button>
       </div>
 
-      <div className="bg-gray-200 w-full h-[2px] md:w-[2px] md:h-[550px]"></div>
+      <div className="bg-gray-200 w-full h-[2px] md:w-[2px] md:h-[500px] lg:h-[550px]"></div>
 
-      <div className="mnemonics_wrapper max-h-[160px] lg:max-h-[550px] w-full xl:w-auto overflow-y-scroll overflow-x-hidden">
+      <div className="mnemonics_wrapper max-h-[160px] md:max-h-[500px] xl:max-h-[550px] w-full xl:w-auto overflow-y-scroll overflow-x-hidden">
         <div className="flex flex-col gap-4">
           {selectedMnemo?.map((mnemo, i) => (
             <div

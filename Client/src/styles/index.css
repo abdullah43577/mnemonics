@@ -40,25 +40,17 @@ body {
   cursor: grab;
 }
 
-h2,
+a.hd,
 .memories {
   font-family: 'Excon', sans-serif;
 }
 
-.hd {
-  background: linear-gradient(to right, #8338ec, #cb38e7);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 nav ul {
-  transition: height 1s ease, padding 3s ease-in;
+  transition: all 300ms ease-in;
 }
 
-nav ul a:hover svg path,
-nav ul a:hover span {
+nav ul a:hover svg path {
   fill: #8338ec !important;
-  color: #8338ec !important;
   transition: all 500ms linear;
 }
 
@@ -66,11 +58,14 @@ nav ul a.active svg path {
   fill: #8338ec !important;
 }
 
-nav ul a.active span {
+nav ul a:hover span,
+nav ul a.active span,
+.hd {
   background: linear-gradient(90deg, #8338ec 30.97%, #cb38e7 69.87%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  transition: all 500ms linear;
 }
 
 .generator,

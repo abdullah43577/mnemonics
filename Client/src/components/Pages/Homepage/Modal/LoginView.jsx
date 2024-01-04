@@ -6,7 +6,7 @@ export default function LoginView() {
   const dispatch = useDispatch();
 
   return (
-    <div className={`loginView px-8 xl:px-10 ${modalState.loginView ? 'block' : 'hidden'}`}>
+    <div className={`loginView px-5 md:px-4 xl:px-10 ${modalState.loginView ? 'block' : 'hidden'}`}>
       <h2 className="font-[900] text-[40px] leading-[36px] tracking-[-2.2px]">Welcome,</h2>
       <p className="text-[#838393] lg:text-[24px] lg:leading-[25px] my-4">Welcome back champ! Sign in to your QuickMnemo account and continue your memorization journey</p>
 

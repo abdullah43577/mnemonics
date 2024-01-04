@@ -1,21 +1,24 @@
 import UpgradeView from './UpgradeView';
-import LoginView from './SignupView';
-import SignupView from './LoginView';
+import SignupView from './SignupView';
+import LoginView from './LoginView';
+import TokenView from './TokenView';
+import PaymentView from './PaymentView';
 import { useMediaQuery } from '@react-hook/media-query';
 import { useSelector } from 'react-redux';
 import { useContext } from 'react';
-import { stateHandler } from '../Home';
+import { StateHandler } from '../Home';
 
 export default function Modal() {
   const { isModalOpen } = useSelector((state) => state.modalWindow);
-  const { closeModal } = useContext(stateHandler);
+  const { closeModal } = useContext(StateHandler);
 
-  const isSmallScreen = useMediaQuery('(max-width:768px)');
+  const isSmallScreen = useMediaQuery('(max-width:390px)');
+  const isVerySmallScreen = useMediaQuery('(max-width:330px)');
 
   return (
     <div
-      className={`modal bg-white rounded-t-[35px] md:rounded-[15px] fixed bottom-0 md:bottom-auto md:-translate-x-[50%] md:-translate-y-[50%] w-full md:w-[600px] md:top-[50%] md:left-[50%] md:p-4 z-[5000]  ${
-        isModalOpen ? (isSmallScreen ? 'translate-y-0' : '') : isSmallScreen ? 'translate-y-full' : 'hidden'
+      className={`modal ${isSmallScreen ? 'w-[350px]' : ''} ${isVerySmallScreen ? 'w-[280px]' : ''} w-[400px] bg-white rounded-[15px] fixed -translate-x-[50%] -translate-y-[50%] md:w-[600px] top-[50%] left-[50%] md:p-4 z-[5000]  ${
+        isModalOpen ? '' : 'hidden'
       } `}
     >
       {/* onClick={closeModal} */}
@@ -36,6 +39,12 @@ export default function Modal() {
 
       {/* login view */}
       <LoginView />
+
+      {/* payment view */}
+      <PaymentView />
+
+      {/* token view */}
+      <TokenView />
     </div>
   );
 }

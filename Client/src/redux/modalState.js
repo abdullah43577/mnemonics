@@ -5,6 +5,8 @@ const initialState = {
     upgradeView: true,
     signupView: false,
     loginView: false,
+    paymentView: false,
+    tokenView: false,
   },
 };
 
@@ -32,12 +34,28 @@ export const modalStateSlice = createSlice({
             loginView: true,
           },
         };
+      } else if (payload === 'loginView') {
+        return {
+          modalState: {
+            ...state.modalState,
+            loginView: false,
+            paymentView: true,
+          },
+        };
+      } else if (payload === 'paymentView') {
+        return {
+          modalState: {
+            ...state.modalState,
+            paymentView: false,
+            tokenView: true,
+          },
+        };
       } else {
         return {
           modalState: {
             ...state.modalState,
+            tokenView: false,
             upgradeView: true,
-            loginView: false,
           },
         };
       }

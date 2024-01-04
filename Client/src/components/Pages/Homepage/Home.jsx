@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import { toggleModal } from '../../../redux/toggleModal';
 import { resetModalState } from '../../../redux/modalState';
 
-export const stateHandler = createContext();
+export const StateHandler = createContext();
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -18,7 +18,7 @@ export default function Home() {
   };
 
   return (
-    <stateHandler.Provider value={{ closeModal }}>
+    <StateHandler.Provider value={{ closeModal }}>
       <div className="max-w-[1440px] px-5 xl:px-[162px] mx-auto text-center">
         <Hero />
 
@@ -29,6 +29,6 @@ export default function Home() {
       <Modal />
 
       <Overlay />
-    </stateHandler.Provider>
+    </StateHandler.Provider>
   );
 }

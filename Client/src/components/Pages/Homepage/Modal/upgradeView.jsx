@@ -1,13 +1,16 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleModalState } from '../../../../redux/modalState';
+import { useMediaQuery } from '@react-hook/media-query';
 
 export default function UpgradeView() {
   const { modalState } = useSelector((state) => state.modalState);
   const dispatch = useDispatch();
+  const isSmallScreen = useMediaQuery('(max-width:390px)');
+  const isVerySmallScreen = useMediaQuery('(max-width:330px)');
 
   return (
-    <div className={`upgradeView px-4 xl:px-10 ${modalState.upgradeView ? 'block' : 'hidden'}`}>
-      <h2 className="font-[700] text-[40px] xl:text-[48px] leading-[36px] lg:leading-[49px] tracking-[-2.64px]">
+    <div className={`upgradeView px-5 md:px-4 xl:px-10 ${modalState.upgradeView ? 'block' : 'hidden'}`}>
+      <h2 className={`font-[700] text-[40px] xl:text-[48px] leading-[36px] lg:leading-[49px] tracking-[-2.64px] ${isSmallScreen ? 'text-[36px]' : ''}`}>
         Upgrade to QuickMnemo <span className="plus text-white w-[51px] h-[32px] text-center rounded-[11px] text-xl tracking-[-1.1px] leading-[36px] inline-block">Plus</span>
       </h2>
       <p className="text-[#838393] lg:text-[24px] lg:leading-[25px] my-4">Quickmnemo plus gives you access to exciting features to help you memorize better</p>
@@ -29,7 +32,7 @@ export default function UpgradeView() {
               <path d="M0.5 0H18.5V18H0.5V0Z" fill="#8338EC" />
             </g>
           </svg>
-          <p className="text-[#838393] lg:text-[24px]">Generate more memorable answers</p>
+          <p className={`text-[#838393] lg:text-[24px] ${isSmallScreen ? 'text-[15px]' : ''}`}>Generate more memorable answers</p>
         </div>
 
         <div className="flex items-center gap-2 my-2 xl:my-0">
@@ -49,7 +52,7 @@ export default function UpgradeView() {
             </g>
           </svg>
           {/* educative? */}
-          <p className="text-[#838393] lg:text-[24px]">Make it sound anyhow you like, fun?</p>
+          <p className={`text-[#838393] lg:text-[24px] ${isSmallScreen ? 'text-[15px]' : ''}`}>Make it sound anyhow you like, fun?</p>
         </div>
 
         <div className="flex items-center gap-2">
@@ -68,13 +71,18 @@ export default function UpgradeView() {
               <path d="M0.5 0H18.5V18H0.5V0Z" fill="#8338EC" />
             </g>
           </svg>
-          <p className="text-[#838393] lg:text-[24px]">
+          <p className={`text-[#838393] lg:text-[24px] ${isSmallScreen ? 'text-[15px]' : ''}`}>
             Support the <span className="underline text-black">team</span> behind Quickmnemo
           </p>
         </div>
       </div>
 
-      <button className="generator text-white lg:text-[22.134px] leading-5 lg:leading-[22.134px] rounded-[15px] py-[19px] lg:py-[34.5px] px-6 w-full my-8 lg:h-[85px] font-[600]" onClick={() => dispatch(toggleModalState('upgradeView'))}>
+      <button
+        className={`generator text-white lg:text-[22.134px] leading-5 lg:leading-[22.134px] rounded-[15px] py-[15px] md:py-[19px] lg:py-[34.5px] px-6 w-full my-8 lg:h-[85px] font-[600] ${isSmallScreen ? 'text-sm' : ''} ${
+          isVerySmallScreen ? 'text-xs' : ''
+        }`}
+        onClick={() => dispatch(toggleModalState('upgradeView'))}
+      >
         Upgrade for just ₦950 per month
       </button>
     </div>

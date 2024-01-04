@@ -7,13 +7,24 @@ export default function SavedMnemo() {
 
   return (
     <div className="max-w-[1440px] px-5 xl:px-[162px] mx-auto">
+      <div className="flex items-center gap-2 text-sm lg:text-lg mb-[15px] text-[#8E8E93]">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M20.625 8.07812C20.625 14.0938 11.7055 18.963 11.3257 19.1641C11.2256 19.2179 11.1137 19.2461 11 19.2461C10.8863 19.2461 10.7744 19.2179 10.6743 19.1641C10.2945 18.963 1.375 14.0938 1.375 8.07812C1.37659 6.66551 1.93846 5.3112 2.93733 4.31233C3.9362 3.31346 5.29051 2.75159 6.70312 2.75C8.47773 2.75 10.0315 3.51312 11 4.80305C11.9685 3.51312 13.5223 2.75 15.2969 2.75C16.7095 2.75159 18.0638 3.31346 19.0627 4.31233C20.0615 5.3112 20.6234 6.66551 20.625 8.07812Z"
+            fill="#8E8E93"
+          />
+        </svg>
+
+        <span className="font-[700]">Saved Mnemo</span>
+      </div>
+
       <section className="wrapper flex flex-col gap-[44px] lg:gap-[53.5px] border border-gray-200 rounded-[35px] p-5 mb-4 w-auto xl:w-full mx-auto min-h-[85vh]">
         <div className="mnemonics_wrapper w-full xl:w-auto">
-          <div className="flex flex-col md:flex-row justify-center gap-4">
+          <div className="flex flex-col justify-center gap-4">
             {selectedMnemo?.map((mnemo, i) => (
               <div
                 key={i}
-                className={`generated_mnemo generated_mnemo-${i} border border-gray-200 rounded-[15px] w-full xl:w-[440px] cursor-pointer h-[70px] md:h-[75px] lg:h-[85px] relative overflow-hidden flex items-center justify-center tracking-[-0.8px]`}
+                className={`generated_mnemo generated_mnemo-${i} border border-gray-200 rounded-[15px] w-full cursor-pointer h-[70px] md:h-[75px] lg:h-[85px] relative overflow-hidden flex items-center justify-center tracking-[-0.8px]`}
                 onClick={() => dispatch(handleGeneratedMnemoClick(`generated_mnemo-${i}`))}
               >
                 <svg className="inactiveMnemo absolute top-0 left-0" width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">

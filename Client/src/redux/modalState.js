@@ -68,6 +68,8 @@ export const modalStateSlice = createSlice({
           upgradeView: true,
           signupView: false,
           loginView: false,
+          paymentView: false,
+          tokenView: false,
         },
       };
     },

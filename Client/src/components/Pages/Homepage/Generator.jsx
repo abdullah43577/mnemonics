@@ -95,12 +95,12 @@ export default function Generator() {
 
       <div className="bg-gray-200 w-full h-[2px] md:w-[2px] md:h-[500px] lg:h-[550px]"></div>
 
-      <div className="mnemonics_wrapper max-h-[160px] md:max-h-[500px] xl:max-h-[550px] w-full xl:w-auto overflow-y-scroll overflow-x-hidden">
+      <div className="mnemonics_wrapper max-h-[160px] md:max-h-[500px] xl:max-h-[550px] w-full xl:w-[440px] overflow-y-scroll overflow-x-hidden">
         <div className="flex flex-col gap-4">
           {selectedMnemo?.map((mnemo, i) => (
             <div
               key={i}
-              className={`generated_mnemo generated_mnemo-${i} border border-gray-200 rounded-[15px] w-full xl:w-[440px] cursor-pointer h-[70px] md:h-[75px] lg:h-[85px] relative overflow-hidden flex items-center justify-center tracking-[-0.8px]`}
+              className={`generated_mnemo generated_mnemo-${i} border border-gray-200 rounded-[15px] w-full cursor-pointer h-[70px] md:h-[75px] lg:h-[85px] relative overflow-hidden flex items-center justify-center tracking-[-0.8px]`}
               onClick={() => dispatch(handleGeneratedMnemoClick(`generated_mnemo-${i}`))}
             >
               <svg className="inactiveMnemo absolute top-0 left-0" width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">

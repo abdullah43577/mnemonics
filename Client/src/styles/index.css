@@ -20,7 +20,8 @@ body {
 
 /* Targeting the entire scrollbar */
 .mnemonics_wrapper::-webkit-scrollbar {
-  width: 1px; /* Set the width of the scrollbar */
+  /* width: 1px; Set the width of the scrollbar */
+  display: none;
 }
 
 /* Track */
@@ -41,7 +42,8 @@ body {
 }
 
 a.hd,
-.memories {
+.memories,
+h2 {
   font-family: 'Excon', sans-serif;
 }
 

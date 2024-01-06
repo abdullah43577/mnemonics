@@ -17,7 +17,7 @@ export default function Modal() {
 
   return (
     <div
-      className={`modal ${isSmallScreen ? 'w-[350px]' : ''} ${isVerySmallScreen ? 'w-[280px]' : ''} w-[400px] bg-white rounded-[15px] fixed -translate-x-[50%] -translate-y-[50%] md:w-[600px] top-[50%] left-[50%] md:p-4 z-[5000]  ${
+      className={`modal ${isVerySmallScreen ? 'w-[280px]' : isSmallScreen ? 'w-[350px]' : 'w-[400px]'} bg-white rounded-[15px] fixed -translate-x-[50%] -translate-y-[50%] md:w-[600px] top-[50%] left-[50%] md:p-4 z-[5000]  ${
         isModalOpen ? '' : 'hidden'
       } `}
     >

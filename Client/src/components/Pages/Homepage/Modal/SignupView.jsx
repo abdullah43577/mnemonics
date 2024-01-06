@@ -6,7 +6,7 @@ export default function SignupView() {
   const dispatch = useDispatch();
 
   return (
-    <div className={`signupView px-5 md:px-4 xl:px-10 ${modalState.signupView ? 'block' : 'hidden'}`}>
+    <div className={`signupView px-5 pt-[16px] md:px-4 xl:px-10 ${modalState.signupView ? 'block' : 'hidden'}`}>
       <h2 className="font-[900] text-[40px] leading-[36px] tracking-[-2.2px]">Hello there,</h2>
       <p className="text-[#838393] lg:text-[24px] lg:leading-[25px] my-4">Unlock memory's power! Sign up for QuickMnemo and unleash your potential. Learn. Remember. Achieve. ✨</p>
 

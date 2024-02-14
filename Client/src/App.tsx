@@ -4,7 +4,6 @@ import Home from './components/Pages/Homepage/Home';
 import SavedMnemo from './components/Pages/SavedMnemo/savedMnemo';
 import Support from './components/Pages/Support/support';
 import WhatsNew from './components/Pages/whatsNew/whatsNew';
-import { ReactNode } from 'react';
 
 const routes = (
   <Route path="/" element={<RootLayout />}>
@@ -15,7 +14,7 @@ const routes = (
   </Route>
 );
 
-const router = createBrowserRouter(createRoutesFromElements(routes as ReactNode));
+const router = createBrowserRouter(createRoutesFromElements(routes));
 
 export default function App() {
   return <RouterProvider router={router} />;

@@ -3,12 +3,9 @@ import App from './App.jsx';
 import './styles/index.css';
 import { store } from './redux/store.js';
 import { Provider } from 'react-redux';
-import { ReactNode } from 'react';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  (
-    <Provider store={store}>
-      <App />
-    </Provider>
-  ) as ReactNode
+  <Provider store={store}>
+    <App />
+  </Provider>
 );

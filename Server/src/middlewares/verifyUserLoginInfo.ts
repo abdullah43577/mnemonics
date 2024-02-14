@@ -8,7 +8,7 @@ export const verifyUserLoginInfo = async (req: Request, res: Response, next: Nex
     const user = await UserModel.findOne({ email });
     if (user) {
       // compare passwords
-      const passwordMatch = await bcrypt.compare(password, user.password);
+      const passwordMatch = await bcrypt.compare(password, user.password as string);
 
       if (passwordMatch) next();
 

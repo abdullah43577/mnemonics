@@ -1,12 +1,10 @@
-import dotenv from 'dotenv';
-dotenv.config();
+import 'dotenv/config';
 import express from 'express';
-import mongoose from 'mongoose';
 import morgan from 'morgan';
 import cors from 'cors';
-const PORT = process.env.PORT;
-const { DB_PASS } = process.env;
+const { PORT } = process.env;
 import router from './routes/routes';
+import { connectDB } from './config/connectDB';
 
 const app = express();
 
@@ -16,16 +14,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-const dbURI = `mongodb+srv://officialayo540:${DB_PASS}@mnemonicscluster.x0keyqz.mongodb.net/mnemonics_user_db`;
+connectDB();
 
-(async function () {
-  try {
-    await mongoose.connect(dbURI);
-    app.listen(PORT, () => console.log(`server started on http://localhost:${PORT}`));
-  } catch (err) {
-    console.log('mongodb not connected', err);
-  }
-})();
+app.listen(PORT, () => console.log(`server started on http://localhost:${PORT}`));
 
 // routes
 app.use(router);
